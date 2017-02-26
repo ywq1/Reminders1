@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingRight="16dp"
     android:paddingLeft="16dp"
     android:paddingTop="16dp"
@@ -11,11 +12,26 @@
     android:background="@color/dark_grey"
     tools:context="com.apress.gerber.reminders1.RemindersActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/view">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/dark_grey"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+    </android.support.design.widget.AppBarLayout>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/reminders_list_view"
-        android:layout_alignParentTop="true"
-        android:layout_conterHorizontal="true"
-        tools:listitem="@layout/reminders_row"/>
+        android:layout_centerHorizontal="true"
+        tools:listitem="@layout/reminders_row"
+        android:layout_below="@+id/view"/>
 </RelativeLayout>
