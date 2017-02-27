@@ -6,36 +6,33 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.v7.widget.ActionBarContextView;
 import android.util.Log;
-
-import java.security.PublicKey;
 
 /**
  * Created by yuwanqing on 2017-02-26.
  */
 public class RemindersDbAdapter {
     //these are the column names
-    public static final String COL_ID = "_id";
+    public static final String COL_ID = "_id";//列名
     public static final String COL_CONTENT = "content";
     public static final String COL_IMPORTANT = "important";
 
     //these are the corresponding indices
-    public static final int INDEX_ID = 0;
+    public static final int INDEX_ID = 0;//索引值
     public static final int INDEX_CONTENT = INDEX_ID + 1;
     public static final int INDEX_IMPORTANT = INDEX_CONTENT + 2;
 
     //used for logging
     private static final String TAG = "RemindersDbAdapter";
 
-    private DatabaseHelper mDbHelper;
+    private DatabaseHelper mDbHelper;//两个数据库API对象
     private SQLiteDatabase mDb;
 
-    private static final String DATABASE_NAME = "dba_remdrs";
-    private static final String TABLE_NAME = "tbl_remdrs";
-    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "dba_remdrs";//数据库名称
+    private static final String TABLE_NAME = "tbl_remdrs";//表名
+    private static final int DATABASE_VERSION = 1;//版本
 
-    private final Context mCtx;
+    private final Context mCtx;//上下文对象
 
     //SQL statement used to create the database
     private static final String DATABASE_CREATE =
